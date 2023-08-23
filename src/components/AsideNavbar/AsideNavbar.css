@@ -1,0 +1,11 @@
+/*background-color: #0C354F;*/
+
+.asideNavbar{
+    background-color:#0C354F ;
+    color: white;
+    width: 300px; 
+    padding-left: 24px;
+    margin-right: 30px;
+    padding-top: 36px;
+    height: 100vh;  
+}
