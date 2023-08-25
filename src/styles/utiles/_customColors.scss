@@ -1,0 +1,35 @@
+// ajout de typo
+
+//color
+$green_flash: #4BD2CA; 
+$gris_argent: #AFB2B6;
+$bleu_fonce_vif: #304399;// secondaire_2
+$teal_green: #369C96; //primaire
+$bleu_fonce_intense : #0C354F; // secondaire
+$rouge_fonce : #A94442;
+$vert_vif : #27AE60;
+$nuance_gris_vert : #8FA2A2;
+
+// White, gray and black colors
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+
+// main colors
+$primary:$teal_green;
+$secondary:$bleu_fonce_intense;
+$tertiary_2:$bleu_fonce_vif;
+
+// les autres couleurs
+
+$error_color:$rouge_fonce;
+$success_color:$vert_vif

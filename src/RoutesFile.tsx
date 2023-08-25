@@ -3,7 +3,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 
 import Home from './pages/Home/Home';
 import Etudes from './pages/Etudes';
-import InnerContent from './components/InnerContent/InnerContent';
+import InnerHead from './components/InnerHead/InnerHead';
 import InnerMaison from './pages/Maisons/InnerMason';
 import Encours from './pages/Maisons/Encours';
 import Archives from './pages/Maisons/Archives';
@@ -24,7 +24,7 @@ import Appartements from './pages/Appartements';
 function RoutesFile () {
     return (
         <Routes>
-            <Route path="/" element ={<InnerContent />}>
+            <Route path="/" element ={<InnerHead />}>
                 <Route path="/" element ={<Navigate replace to="home" />}/>
                 <Route path="/home" element ={<Home />}/>
                 <Route path="maisons" element ={<InnerMaison/>}>
