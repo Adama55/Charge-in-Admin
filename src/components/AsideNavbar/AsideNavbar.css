@@ -1,5 +1,6 @@
 /*background-color: #0C354F;*/
 
+/*
 .asideNavbar{
     background-color:#0C354F ;
     color: white;
@@ -8,10 +9,14 @@
     margin-right: 30px;
     padding-top: 36px;
     height: 100vh;  
-}
+}*/
 
 .asideNavbar a{
     color: white;
+}
+
+.asideNavbar .item-witdh{
+    width: 160px !important ;
 }
 /*.icon-lage{
         opacity: 0.6;

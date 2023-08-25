@@ -4,8 +4,12 @@ import React from 'react';
 const Etudes = () => {
     return (
         <div>
-            <p>Je la page etudes</p>
+            <div className="modal-body">
+                <p> etudes</p>
+          </div>       
+                        
         </div>
+
     );
 }
 
