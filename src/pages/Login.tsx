@@ -1,23 +1,57 @@
-import {useNavigate} from "react-router-dom"
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
-	const navigate = useNavigate()
+const LoginPage: React.FC = () => {
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
-	//ADMIN
-	//USER
+    const handleLogin = () => {
+        // Simulate user data for testing
+        const users = [
+            { email: 'user@example.com', password: 'password' }
+        ];
 
-	const login = () => {
-		localStorage.setItem("user", JSON.stringify({role: "ADMIN"}))
-		navigate("/home")
-	}
+        const user = users.find(u => u.email === email && u.password === password);
 
-	return (
-		<div className="login">
-			<h2>Welcome to login page! </h2>
-			<p>Please loging to continue</p>
-			<button onClick={login}> Login</button>
-		</div>
-	)
+        if (user) {
+            setError('');
+            // Save user data in local storage or use a state management solution
+            localStorage.setItem('user', JSON.stringify(user));
+            navigate('/home');
+        } else {
+            setError('Invalid email or password');
+        }
+    };
+
+    return (
+        <div className="container mt-5">
+            <h2>Login</h2>
+            <div className="mb-3">
+                <label htmlFor="email" className="form-label">Email</label>
+                <input
+                    type="email"
+                    className="form-control"
+                    id="email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                />
+            </div>
+            <div className="mb-3">
+                <label htmlFor="password" className="form-label">Password</label>
+                <input
+                    type="password"
+                    className="form-control"
+                    id="password"
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
+                />
+            </div>
+            {error && <div className="text-danger">{error}</div>}
+            <button className="btn btn-primary" onClick={handleLogin}>Login</button>
+        </div>
+    );
 }
 
-export default Login
+export default LoginPage;

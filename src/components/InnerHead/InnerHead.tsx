@@ -1,7 +1,15 @@
-import {Outlet} from 'react-router-dom'
+import {Outlet, useLocation} from 'react-router-dom'
 import IconNotification from "../../asset/images/icon/icon_notifications.svg"
 
 const  InnerHead=() =>{
+
+  const user = localStorage.getItem('user');
+  const isAuthenticated = user !== null;
+
+  const location = useLocation();
+  const isLoginPage = location.pathname === '/login';
+  
+   
 
   interface UserConnected {
     id: number;
@@ -23,6 +31,7 @@ const  InnerHead=() =>{
 
   return <div className='sl-innerHead'>
     <>
+    {!isLoginPage &&
       <header>
         Bonjour <span className='sl-nom'> {userConnected[0].firstName} {userConnected[0].lastName}</span>
         <span  className="position-relative">
@@ -31,6 +40,7 @@ const  InnerHead=() =>{
         </span>
         <span>{userConnected[0]?.firstName.charAt(0)}</span>
       </header>
+      }
       <Outlet/>
     </>     
   </div>;

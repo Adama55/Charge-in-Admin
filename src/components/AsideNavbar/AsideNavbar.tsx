@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ItemsMaison from "../../pages/Maisons/ItemsMaison";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse, faHouseChimney, faPlus, faTh} from "@fortawesome/free-solid-svg-icons";
+import { faHouseChimney, faPlus} from "@fortawesome/free-solid-svg-icons";
 import { faThLarge } from "@fortawesome/free-solid-svg-icons";
 
 import { Button, Offcanvas, OffcanvasHeader,OffcanvasBody } from 'reactstrap';
@@ -12,6 +12,19 @@ import Logo from '../../asset/images/Logo.png';
 import './AsideNavbar.css'
 
 function AsideNavbar () {
+    const navigate = useNavigate();
+
+    const user = localStorage.getItem('user');
+    const isAuthenticated = user !== null;
+
+    const handleLogout = () => {
+        // Remove user data from local storage or state management solution
+        localStorage.removeItem('user');
+        navigate('/login');
+    };
+
+
+    ///
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleOffcanvas = () => {
@@ -19,9 +32,10 @@ function AsideNavbar () {
     };
     
     return (
-        <>            
-            <nav className="asideNavbar col- bg-secondary ps-3 d-md-inline d-none ">
-                <Link to="/">
+       <>     
+      {isAuthenticated &&  <div className="bg-secondary">            
+             <nav className="asideNavbar col- bg-secondary ps-3 d-md-inline d-none ">
+                <Link to="/home">
                     <img src={Logo} alt="logo charge in" />
                 </Link>
                 <ul className="list-unstyled">
@@ -78,6 +92,7 @@ function AsideNavbar () {
                     </li>
                 </ul>
             </nav>
+
             <nav className="asideNavbar col- ps-3 d-md-none d-inline ">
                 <Button color="secondary" onClick={toggleOffcanvas} className="">
                     Menu
@@ -101,6 +116,8 @@ function AsideNavbar () {
                     </OffcanvasBody>
                 </Offcanvas>
             </nav>
+            <button className="btn btn-primary" onClick={handleLogout}>Logout</button>                            
+        </div>}
         </>
     );
 }
