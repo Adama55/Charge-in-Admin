@@ -41,66 +41,114 @@ function AsideNavbar () {
             <div className='sl-desktop bg-secondary text-white'>           
              <nav className=" ps-3 d-md-inline d-none ">
                 <Link to="/home">
-                    <img src={Logo} alt="logo charge in" />
+                    <img className='mb-4' src={Logo} alt="logo charge in" />
                 </Link>
                 
                 <ul className="list-unstyled">
                     <li>
-                    <Link to="/home"><FontAwesomeIcon icon={faThLarge} className="icon-lage"/> Home <FontAwesomeIcon icon={faPlus} /></Link> 
-                    </li>
+                        <Link to="/home" className="sl-item-nav" id='sl-desktopId'> 
+                            <p className="d-flex mb-0"><span><FontAwesomeIcon icon={faThLarge} className="" /></span><span className='ms-2'>Accueil</span></p>
+                        </Link> 
+                    </li> 
                 </ul> 
-                <p>OPPORTUINITE</p>       
+                <p className='sl-itemsTitle'>OPPORTUINITE</p>       
                 <ul className="list-unstyled">
                     <li>
                         <Link
                             to="/maisons"
-                            className={isMaisonActive ? 'active' : ''}
+                            className={isMaisonActive ? ' maison-active sl-item-nav' : 'sl-item-nav'}
                             onClick={handleMaisonLinkClick}
+                            id='sl-desktopId'
                             >
-                            Maisons
+                            <p className="d-flex mb-0"><span><FontAwesomeIcon icon={faHouseChimney} className="" /></span> <span className='ms-2'>Maisons</span></p>
+                            <p className="mb-0"><FontAwesomeIcon icon={faPlus}/></p>                            
                         </Link>
                     </li>
-                    {isMaisonActive && <ItemsMaison/> }
+                    <li>{isMaisonActive && <ItemsMaison/> }</li>
                     <li>
-                        <Link to="/appartements"> Appartements </Link> 
+                        <Link to="/appartements" className="sl-item-nav" id='sl-desktopId'> 
+                            <p className="d-flex mb-0">
+                                <span><FontAwesomeIcon icon={faThLarge} className="" /></span>
+                                <span className='ms-2'>Appartements</span>
+                            </p>
+                        </Link> 
                     </li> 
                     <li>
-                    <Link to="/etudes" className="d-flex align-items-center"> 
-                        <p className="d-none d-md-flex"><FontAwesomeIcon icon={faHouseChimney} className="gridIcon" /> </p>
-                        <p className="ms-3 col-2 col-md-4">Etudes </p>
-                        <p className="ms-3"><FontAwesomeIcon icon={faPlus}/></p>
-                    </Link> 
+                        <Link to="/etudes" className="sl-item-nav" id='sl-desktopId'> 
+                            <p className="d-flex mb-0"><span><FontAwesomeIcon icon={faHouseChimney} className="" /></span> <span className='ms-2'>Etudes</span></p>
+                            <p className="mb-0"><FontAwesomeIcon icon={faPlus}/></p>
+                        </Link> 
                     </li>
                 </ul>
 
-                <p>UTILISATEURS</p>       
-                <ul className="list-unstyled">
+                <p className='sl-itemsTitle'>UTILISATEURS</p>       
+                <ul className="list-unstyled">                
                     <li>
-                        <Link to="/ceoadmins"> CAO & Admins </Link> 
+                        <Link to="/ceoadmins" className="sl-item-nav" id='sl-desktopId'> 
+                            <p className="d-flex mb-0">
+                                <span><FontAwesomeIcon icon={faThLarge} className="" /></span>
+                                <span className='ms-2'>CAO & Admins</span>
+                            </p>
+                        </Link> 
                     </li> 
                     <li>
-                        <Link to="/projectmanagers">Project Managers </Link> 
-                    </li> 
-                    <li>
-                        <Link to="/installateurs">Installateurs</Link> 
+                        <Link to="/projectmanagers" className="sl-item-nav" id='sl-desktopId'> 
+                            <p className="d-flex mb-0">
+                                <span><FontAwesomeIcon icon={faThLarge} className="" /></span>
+                                <span className='ms-2 text-nowrap'>Project Managers</span>
+                            </p>
+                        </Link> 
                     </li>
                     <li>
-                        <Link to="/clientsb2c"> Clients B2C</Link> 
+                        <Link to="/installateurs" className="sl-item-nav" id='sl-desktopId'> 
+                            <p className="d-flex mb-0">
+                                <span><FontAwesomeIcon icon={faThLarge} className="" /></span>
+                                <span className='ms-2'>Installateurs</span>
+                            </p>
+                        </Link> 
+                    </li>
+                    <li>
+                        <Link to="/clientsb2c" className="sl-item-nav" id='sl-desktopId'> 
+                            <p className="d-flex mb-0">
+                                <span><FontAwesomeIcon icon={faThLarge} className="" /></span>
+                                <span className='ms-2'>Clients B2C</span>
+                            </p>
+                        </Link> 
                     </li>
                 </ul>
-                <p>DONNEES</p>       
+                <p className='sl-itemsTitle'>DONNEES</p>       
                 <ul className="list-unstyled">
                     <li>
-                        <Link to="/bornes"> Bornes </Link> 
-                    </li> 
-                    <li>
-                        <Link to="/vehicules"> Véhicules </Link> 
-                    </li> 
-                    <li>
-                        <Link to="/accessoirs"> Accessoirs</Link> 
+                        <Link to="/bornes" className="sl-item-nav" id='sl-desktopId'> 
+                            <p className="d-flex mb-0">
+                                <span><FontAwesomeIcon icon={faThLarge} className="" /></span>
+                                <span className='ms-2'>Bornes</span>
+                            </p>
+                        </Link> 
                     </li>
                     <li>
-                        <Link to="/objectifs"> Objectifs</Link> 
+                        <Link to="/vehicules" className="sl-item-nav" id='sl-desktopId'> 
+                            <p className="d-flex mb-0">
+                                <span><FontAwesomeIcon icon={faThLarge} className="" /></span>
+                                <span className='ms-2'>Véhicules</span>
+                            </p>
+                        </Link> 
+                    </li> 
+                    <li>
+                        <Link to="/accessoirs" className="sl-item-nav" id='sl-desktopId'> 
+                            <p className="d-flex mb-0">
+                                <span><FontAwesomeIcon icon={faThLarge} className="" /></span>
+                                <span className='ms-2'>Accessoirs</span>
+                            </p>
+                        </Link> 
+                    </li>
+                    <li>
+                        <Link to="/objectifs" className="sl-item-nav" id='sl-desktopId'> 
+                            <p className="d-flex mb-0">
+                                <span><FontAwesomeIcon icon={faThLarge} className="" /></span>
+                                <span className='ms-2'>Objectifs</span>
+                            </p>
+                        </Link> 
                     </li>
                 </ul>
             </nav>

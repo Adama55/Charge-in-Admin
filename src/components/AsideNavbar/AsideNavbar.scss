@@ -1,11 +1,32 @@
 
-
 .asideNavbar .sl-desktop{
+    font-family: 'Chivo', sans-serif;
+    padding:36px 24px ;
     
+}
+
+.asideNavbar .sl-desktop .sl-itemsTitle{
+    font-size: 15px;
+    color:#6A93AC ;
 }
 
 .asideNavbar .sl-desktop a{
     text-decoration: none;
     color: white;
-    
+    font-size: 18px;   
+}
+
+.asideNavbar .sl-desktop .sl-item-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-top: 6px;
+    margin-top: 6px;
+    border-radius: 8px;
+
+}
+
+.asideNavbar .sl-desktop #sl-desktopId:focus {
+    background-color: rgb(0, 0, 0, 0.3);
 }
