@@ -8,7 +8,6 @@ import InnerMaison from './pages/Maisons/InnerMason';
 import Encours from './pages/Maisons/Encours';
 import Archives from './pages/Maisons/Archives';
 
-import PublicRoutes from './components/PublicRoutes';
 
 import CeoAdmins from './pages/CeoAdmins';
 import ProjectManagers from './pages/ProjectManagers';
@@ -21,6 +20,7 @@ import Vehicules from './pages/Vehicules';
 import Accessoires from './pages/Accessoires';
 import Objectifs from './pages/Objectifs';
 import Appartements from './pages/Appartements';
+import ErrorPage from './pages/ErrorPage';
 
 
 
@@ -53,6 +53,7 @@ function RoutesFile () {
                  <Route path="/objectifs" element ={<Objectifs />}/>
                 
             </Route>
+            <Route path="*" element={<ErrorPage />} />
         </Routes>
     );
 }

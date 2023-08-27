@@ -1,0 +1,25 @@
+.sl-innerHead .sl-nom {
+  color: #369C96;
+  background-color: black;
+}
+
+.custom-modal {
+  margin: 0 auto;
+  width: 300px;
+}
+
+.sl-innerHead {
+  padding-top: 30px;
+  width: 100%;
+}
+
+.sl-innerHead .sl-userFirstChar {
+  border-radius: 50%;
+  width: 47px;
+  height: 47px;
+  background-color: #304399;
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+  margin-right: 5%;
+}/*# sourceMappingURL=InnerHead.css.map */

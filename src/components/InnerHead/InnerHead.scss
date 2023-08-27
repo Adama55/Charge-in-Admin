@@ -1,0 +1,28 @@
+@use '../../styles/utiles/customColors' as *;
+
+.sl-innerHead .sl-nom{
+    color: $primary;
+    background-color: black;
+}
+
+.custom-modal {
+    margin: 0 auto; 
+
+    width: 300px;
+}
+
+.sl-innerHead {
+    padding-top: 30px;
+    width: 100%;
+}
+
+.sl-innerHead .sl-userFirstChar{
+    border-radius: 50%;
+    width: 47px;
+    height: 47px;
+    background-color: $tertiary_2;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    margin-right: 5%;
+}

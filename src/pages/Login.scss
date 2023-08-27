@@ -1,0 +1,28 @@
+@use '../styles/utiles/customColors' as *;
+@use '../styles/utiles/customTypo' as *;
+
+.sl-loginField{
+    width: 500px;
+    height: auto;
+    background-color: white !important;
+    box-shadow: 0px 0px 16px 0px #A7B8BA;
+    border-radius: 8px;
+    padding: 64px 56px;
+}
+
+.sl-login .sl-p{
+    color: #6A6A6A;
+}
+.sl-login .custuMag{
+    margin-bottom: 60px; // 120px valeur sur maquette
+}
+
+.sl-login p a{
+    text-decoration: none;
+}
+
+
+.sl-login .sl-logo{
+    width: 160px;
+    height: 34px;
+}

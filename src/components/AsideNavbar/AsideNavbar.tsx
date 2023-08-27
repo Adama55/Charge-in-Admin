@@ -18,7 +18,6 @@ function AsideNavbar () {
     const isAuthenticated = user !== null;
 
     const handleLogout = () => {
-        // Remove user data from local storage or state management solution
         localStorage.removeItem('user');
         navigate('/login');
     };
@@ -30,14 +29,21 @@ function AsideNavbar () {
     const toggleOffcanvas = () => {
         setIsOpen(!isOpen);
     };
+
+    const [isMaisonActive, setIsMaisonActive] = useState(false);
+    const handleMaisonLinkClick = () => {
+        setIsMaisonActive(!isMaisonActive);
+      };
     
     return (
-       <>     
-      {isAuthenticated &&  <div className="bg-secondary">            
-             <nav className="asideNavbar col- bg-secondary ps-3 d-md-inline d-none ">
+        <aside>     
+        {isAuthenticated &&  <div className="asideNavbar">
+            <div className='sl-desktop bg-secondary text-white'>           
+             <nav className=" ps-3 d-md-inline d-none ">
                 <Link to="/home">
                     <img src={Logo} alt="logo charge in" />
                 </Link>
+                
                 <ul className="list-unstyled">
                     <li>
                     <Link to="/home"><FontAwesomeIcon icon={faThLarge} className="icon-lage"/> Home <FontAwesomeIcon icon={faPlus} /></Link> 
@@ -46,9 +52,15 @@ function AsideNavbar () {
                 <p>OPPORTUINITE</p>       
                 <ul className="list-unstyled">
                     <li>
-                        <Link to="/maisons"> Maisons </Link> 
+                        <Link
+                            to="/maisons"
+                            className={isMaisonActive ? 'active' : ''}
+                            onClick={handleMaisonLinkClick}
+                            >
+                            Maisons
+                        </Link>
                     </li>
-                        <ItemsMaison/> 
+                    {isMaisonActive && <ItemsMaison/> }
                     <li>
                         <Link to="/appartements"> Appartements </Link> 
                     </li> 
@@ -92,6 +104,7 @@ function AsideNavbar () {
                     </li>
                 </ul>
             </nav>
+            </div> 
 
             <nav className="asideNavbar col- ps-3 d-md-none d-inline ">
                 <Button color="secondary" onClick={toggleOffcanvas} className="">
@@ -116,9 +129,9 @@ function AsideNavbar () {
                     </OffcanvasBody>
                 </Offcanvas>
             </nav>
-            <button className="btn btn-primary" onClick={handleLogout}>Logout</button>                            
+            {/*<button className="btn btn-primary" onClick={handleLogout}>Logout</button> */}                           
         </div>}
-        </>
+        </aside>
     );
 }
 
