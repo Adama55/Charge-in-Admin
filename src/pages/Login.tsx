@@ -19,7 +19,7 @@ function LoginPage()  {
 	const handleLogin = () => {
 		// on prend un exemple pour simuler la connexion et deconnexion
 		const users = [
-			{ email: 'nomprenom@example.com', password: 'password' }
+			{ email: 'nomprenom@exemple.com', password: 'password' }
 		];
 
 		// Recherche d'un utilisateur correspondant aux données entrées
