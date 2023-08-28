@@ -1,6 +1,9 @@
-.sl-innerHead .sl-nom {
-  color: #369C96;
-  background-color: black;
+.sl-innerHead {
+  font-family: "Chivo", sans-serif;
+}
+
+.sl-innerHead .sl-nom .text-primary {
+  font-weight: bold;
 }
 
 .custom-modal {
@@ -13,7 +16,7 @@
   width: 100%;
 }
 
-.sl-innerHead .sl-userFirstChar {
+.sl-innerHead .sl-userFirstChar, .sl-userFirstChar {
   border-radius: 50%;
   width: 47px;
   height: 47px;

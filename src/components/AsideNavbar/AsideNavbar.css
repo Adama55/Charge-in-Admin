@@ -1,19 +1,35 @@
+@charset "UTF-8";
+/* barre latérale 
+ Hauteur de la barre latérale à 100% de la hauteur de la vue (viewport)
+*/
+.asideNavbar {
+  height: 100vh;
+}
+
 .asideNavbar .sl-desktop {
   font-family: "Chivo", sans-serif;
   padding: 36px 24px;
 }
 
+/*titre des sections du menu */
 .asideNavbar .sl-desktop .sl-itemsTitle {
   font-size: 15px;
   color: #6A93AC;
 }
 
+/*pour les liens dans le menu */
 .asideNavbar .sl-desktop a {
   text-decoration: none;
   color: white;
   font-size: 18px;
 }
 
+/*le bouton de menu en version mobile */
+.asideNavbar .sl-btMenu {
+  position: absolute;
+}
+
+/*éléments du menu */
 .asideNavbar .sl-desktop .sl-item-nav {
   display: flex;
   justify-content: space-between;
@@ -24,6 +40,7 @@
   border-radius: 8px;
 }
 
+/* lien a focus en version desktop */
 .asideNavbar .sl-desktop #sl-desktopId:focus {
   background-color: rgba(0, 0, 0, 0.3);
 }/*# sourceMappingURL=AsideNavbar.css.map */
